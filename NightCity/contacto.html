@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Red de Fixers - Night City</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Contacto y Red de Fixers</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="ciudad.html">La Ciudad</a></li>
+                <li><a href="lugares.html">Lugares de Interés</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>¿Tenés un encargo o querés reportar un incidente?</h2>
+            <p>Completá el formulario para conectar de manera segura con la red descentralizada de los Fixers de Night City. Recordá que toda transmisión está cifrada contra el rastreo de NetWatch.</p>
+            
+            <form style="display: flex; flex-direction: column; gap: 20px; margin-top: 25px;">
+                <div>
+                    <label for="alias" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Tu Alias o Nombre:</label>
+                    <input type="text" id="alias" name="alias" placeholder="Ej: V_Mercenario" required>
+                </div>
+
+                <div>
+                    <label for="email" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Correo / Sub-Red:</label>
+                    <input type="email" id="email" name="email" placeholder="usuario@subred-nc.net" required>
+                </div>
+
+                <div>
+                    <label for="distrito" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Distrito de Operación:</label>
+                    <select id="distrito" name="distrito">
+                        <option value="watson">Watson</option>
+                        <option value="westbrook">Westbrook (Japantown)</option>
+                        <option value="city_center">City Center (Corpo Plaza)</option>
+                        <option value="heywood">Heywood</option>
+                        <option value="santo_domingo">Santo Domingo</option>
+                        <option value="badlands">Badlands</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="prioridad" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Nivel de Urgencia / Prioridad:</label>
+                    <select id="prioridad" name="prioridad">
+                        <option value="baja">Baja (Sin apuro táctico)</option>
+                        <option value="media">Media (Operativo estándar)</option>
+                        <option value="critica">Crítica - Código Rojo (Vida o muerte)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="pago" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Método de Recompensa:</label>
+                    <select id="pago" name="pago">
+                        <option value="eddies">Transferencia en Eurodólares (Eddies)</option>
+                        <option value="cartuchos">Cartuchos de Datos Cifrados</option>
+                        <option value="ciberware">Intercambio de Componentes de Ciberware</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="mensaje" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Mensaje o Detalles del Contrato:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describa el objetivo o consulta..." required style="resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit">Enviar a la Red</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Canales de Respaldo</h2>
+            <p>Si la red principal falla, podés ubicarnos por los canales tradicionales:</p>
+            <ul>
+                <li><strong>Bar Afterlife:</strong> Frecuencia fija 99.4 FM (preguntar por Rogue).</li>
+                <li><strong>Clínica Clandestina:</strong> Esquina de Kabuki.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Oficina de Turismo de Night City / NetWatch Archives.</p>
+    </footer>
+</body>
+</html>
