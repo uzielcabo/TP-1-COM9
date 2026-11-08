@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&display=swap');
+
+:root {
+    --bg-black: #000000;
+    --bg-box: #05070a;
+    --neon-cyan: #00f0ff;
+    --neon-pink: #ff0055;
+    --neon-yellow: #fcee0a;
+    --text-gray: #b5c0ca;
+    --font-mono: 'Share Tech Mono', monospace;
+    --font-heading: 'Orbitron', sans-serif;
+}
+
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    z-index: 999;
+    background-size: 100% 3px, 6px 100%;
+    pointer-events: none;
+}
+
+html, body {
+    background-color: var(--bg-black) !important;
+    color: var(--text-gray) !important;
+    font-family: var(--font-mono) !important;
+    min-height: 100vh;
+}
+
+.cyber-header {
+    background-color: var(--bg-black);
+    border-bottom: 1px solid var(--neon-cyan) !important;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.15);
+}
+
+.site-title {
+    font-family: var(--font-heading) !important;
+    color: var(--neon-cyan) !important;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 2px 0 var(--neon-pink), -2px 0 var(--neon-cyan), 0 0 12px var(--neon-cyan) !important;
+}
+
+.navbar-nav .nav-link {
+    font-family: var(--font-mono) !important;
+    color: var(--neon-pink) !important;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    padding: 0.25rem 0.75rem !important;
+    transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink) !important;
+}
+
+.cyber-box {
+    background-color: var(--bg-box) !important;
+    border: 1px solid var(--neon-cyan) !important;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2), inset 0 0 10px rgba(0, 240, 255, 0.05) !important;
+    border-radius: 0px !important;
+}
+
+.box-title {
+    font-family: var(--font-heading) !important;
+    color: var(--neon-yellow) !important;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px var(--neon-yellow) !important;
+}
+
+.box-text {
+    font-family: var(--font-mono) !important;
+    color: var(--text-gray) !important;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.btn-cyber, 
+a.btn-cyber {
+    display: inline-block;
+    background-color: transparent !important;
+    border: 1px solid var(--neon-cyan) !important;
+    color: var(--neon-cyan) !important;
+    font-family: var(--font-mono) !important;
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+    letter-spacing: 1.5px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px !important;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.3) !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none;
+}
+
+.btn-cyber:hover, 
+a.btn-cyber:hover {
+    background-color: var(--neon-cyan) !important;
+    color: #000000 !important;
+    box-shadow: 0 0 20px var(--neon-cyan) !important;
+}
+
+footer {
+    background-color: var(--bg-black) !important;
+    border-top: 1px solid var(--neon-cyan) !important;
+}
