@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Night City Guide - Contacto</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -13,7 +13,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon">
         <div class="container">
-            <a class="navbar-brand font-orbitron text-neon fw-bold" href="index.html">// NIGHT_CITY</a>
+            <a class="navbar-brand font-orbitron text-neon fw-bold efecto-glitch" href="index.html">// NIGHT_CITY</a>
             <button class="navbar-toggler border-neon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,27 +28,96 @@
         </div>
     </nav>
 
-    <main class="container py-5">
-        <div class="col-md-8 mx-auto p-5 bg-cyber-dark border border-neon rounded-3 shadow-neon">
-            <h2 class="font-orbitron text-neon mb-4">CANAL DE COMUNICACIÓN ENCRIPTADO</h2>
+    <!-- Alerta de seguridad para canales de transmisión -->
+    <div class="container mt-4">
+        <div class="alert bg-black border border-neon text-neon font-orbitron alert-dismissible fade show shadow-neon" role="alert">
+            <strong class="efecto-glitch">// PROTOCOLO DE ENCRIPTACIÓN ACTIVO:</strong> Las transmisiones son rastreadas por NetWatch en los sectores corporativos. Utilice un proxy de red antes de enviar datos.
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <main class="container py-4">
+        
+        <!-- Formulario Principal Extendido -->
+        <div class="col-lg-8 mx-auto p-5 bg-cyber-dark border border-neon rounded-3 shadow-neon mb-5">
+            <h2 class="font-orbitron text-neon mb-3 efecto-glitch">CANAL DE COMUNICACIÓN ENCRIPTADO</h2>
+            <p class="text-mono text-secondary mb-4">Ingrese los datos de su encargo o solicitud de refugio. La información será encriptada de extremo a extremo a través de la red local de los Fixers.</p>
+            
             <form>
-                <div class="mb-3">
-                    <label class="form-label font-orbitron">ALIAS (USUARIO)</label>
-                    <input type="text" class="form-control bg-dark text-neon border-neon text-mono" placeholder="Ej: MercenarioV">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label font-orbitron text-light">ALIAS (USUARIO DE RED)</label>
+                        <input type="text" class="form-control bg-dark text-neon border-neon text-mono" placeholder="Ej: MercenarioV">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label font-orbitron text-light">FRECUENCIA DE CONTACTO (EMAIL)</label>
+                        <input type="email" class="form-control bg-dark text-neon border-neon text-mono" placeholder="v@edgerunners.net">
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label font-orbitron">FRECUENCIA (EMAIL)</label>
-                    <input type="email" class="form-control bg-dark text-neon border-neon text-mono" placeholder="v@edgerunners.net">
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label font-orbitron text-light">CLASIFICACIÓN DEL ENCARGO</label>
+                        <select class="form-select bg-dark text-neon border-neon text-mono">
+                            <option selected>Seleccionar nivel de riesgo...</option>
+                            <option value="1">Bajo (Contrabando / Datos menores)</option>
+                            <option value="2">Moderado (Rescate / Extorsión)</option>
+                            <option value="3">Crítico (Infiltración Corporativa / Asalto)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label font-orbitron text-light">DISTRITO DE ORIGEN</label>
+                        <select class="form-select bg-dark text-neon border-neon text-mono">
+                            <option selected>Seleccionar sector...</option>
+                            <option value="watson">Watson</option>
+                            <option value="westbrook">Westbrook / Japantown</option>
+                            <option value="citycenter">City Center</option>
+                            <option value="pacifica">Pacifica</option>
+                            <option value="badlands">Badlands</option>
+                        </select>
+                    </div>
                 </div>
+
                 <div class="mb-4">
-                    <label class="form-label font-orbitron">MENSAJE ENCRIPTADO</label>
-                    <textarea class="form-control bg-dark text-neon border-neon text-mono" rows="4" placeholder="Ingresa los datos del encargo..."></textarea>
+                    <label class="form-label font-orbitron text-light">MENSAJE ENCRIPTADO / COORDENADAS</label>
+                    <textarea class="form-control bg-dark text-neon border-neon text-mono" rows="5" placeholder="Detalles de la operación, puntos de extracción o especificaciones de cromo..."></textarea>
                 </div>
-                <button type="submit" class="btn btn-outline-neon btn-lg w-100 font-orbitron">TRANSMITIR DATOS</button>
+
+                <button type="submit" class="btn btn-outline-neon btn-lg w-100 font-orbitron">TRANSMITIR DATOS A LA RED</button>
             </form>
         </div>
+
+        <!-- Canales Alternativos (Grilla de Bootstrap) -->
+        <h3 class="font-orbitron text-neon mb-4 text-center efecto-glitch">// NODOS ALTERNATIVOS DE CONTACTO</h3>
+        
+        <div class="row g-4 justify-content-center mb-5">
+            <div class="col-md-4">
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon p-4 text-center">
+                    <h5 class="font-orbitron text-neon mb-3">MATASANOS LOCAL</h5>
+                    <p class="text-mono text-secondary flex-grow-1">Clínica clandestina en los subniveles de Watson. Reparación de implantes y cambio de identidad sin preguntas.</p>
+                    <span class="badge bg-danger mt-3 font-orbitron">ESTADO: ABIENTO 24/7</span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon p-4 text-center">
+                    <h5 class="font-orbitron text-neon mb-3">RED DE FIXERS</h5>
+                    <p class="text-mono text-secondary flex-grow-1">Canal directo con intermediarios de alta alcurnia en el Afterlife. Solo para contratos con pago verificado en eurodólares.</p>
+                    <span class="badge bg-warning text-dark mt-3 font-orbitron">ESTADO: ALTA DEMANDA</span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon p-4 text-center">
+                    <h5 class="font-orbitron text-neon mb-3">FRECUENCIA NOMADA</h5>
+                    <p class="text-mono text-secondary flex-grow-1">Canal de radio de los clanes en las Badlands. Solicitudes de transporte blindado y contrabando fuera de la ciudad.</p>
+                    <span class="badge bg-success mt-3 font-orbitron">ESTADO: FUERA DE LA RED</span>
+                </div>
+            </div>
+        </div>
+
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

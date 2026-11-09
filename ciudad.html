@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Night City Guide - La Ciudad</title>
-    <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <!-- CSS Propio -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body class="bg-dark text-light cyberpunk-body">
@@ -16,7 +13,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon">
         <div class="container">
-            <a class="navbar-brand font-orbitron text-neon fw-bold" href="index.html">// NIGHT_CITY</a>
+            <a class="navbar-brand font-orbitron text-neon fw-bold efecto-glitch" href="index.html">// NIGHT_CITY</a>
             <button class="navbar-toggler border-neon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,41 +29,124 @@
     </nav>
 
     <main class="container py-5">
+        <!-- Historia Base Expandida -->
         <div class="p-5 mb-5 bg-cyber-dark border border-neon rounded-3 shadow-neon">
             <h2 class="font-orbitron text-neon mb-4">HISTORIA Y FUNDACIÓN</h2>
             <p class="text-mono fs-5">
-                Originalmente conocida como Coronado City, fue ideada por el empresario Richard Night como una utopía corporativa libre de las regulaciones gubernamentales. Tras su asesinato, las megacorporaciones tomaron el control total.
+                Fundada en 1994, originalmente bajo el nombre de Coronado City, esta megalópolis fue la visión utópica del visionario arquitecto y empresario Richard Night. Su objetivo era construir un paraíso capitalista definitivo, libre de la pobreza, el crimen y las sofocantes regulaciones gubernamentales de los viejos Estados Unidos. Sin embargo, su sueño duró poco: Night fue asesinado en 1998 por el crimen organizado, marcando el inicio del descenso de la ciudad hacia el caos.
             </p>
             <p class="text-mono fs-5">
-                Hoy en día, la ciudad está dividida en distritos que marcan una brutal diferencia de clases. Desde los rascacielos blindados de City Center hasta los suburbios industriales controlados por pandillas en Pacifica.
+                Durante las décadas siguientes, las mafias controlaron las calles hasta que las Megacorporaciones, lideradas por gigantes como Arasaka y Militech, barrieron con los sindicatos durante las Guerras Corporativas, tomando el control absoluto de la infraestructura y las leyes. En el año 2023, la ciudad sufrió la detonación de una carga nuclear táctica en el corazón del Centro Corporativo, un evento que envenenó el cielo y reescribió la geografía local.
+            </p>
+            <p class="text-mono fs-5 text-warning">
+                Hoy, en el año 2077, Night City es una selva de asfalto y neón hiper-estratificada. Desde las resplandecientes torres blindadas y fortalezas voladoras del City Center, donde los ejecutivos deciden el destino del mundo, hasta los sub-niveles tóxicos de Pacifica y Santo Domingo, donde la carne humana es el recurso más barato y el cromo es la única religión válida. Sobrevivir aquí no es un derecho; es un privilegio que se compra a base de balas y eurodólares.
             </p>
         </div>
 
-        <!-- Sección de Flexbox y Posicionamiento -->
-        <h3 class="font-orbitron text-neon mt-5">// ARCHIVOS DESCLASIFICADOS</h3>
-        <div class="flex-container-custom">
+        <!-- Sección de Leyendas Expandida -->
+        <h3 class="font-orbitron text-neon mt-5 efecto-glitch">// LEYENDAS DE NIGHT CITY</h3>
+        <div class="row g-4 mt-2">
             
+            <div class="col-md-4">
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <img src="img/JohnnySilverhand.jpg" class="card-img-top border-bottom border-neon" alt="Johnny Silverhand" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title font-orbitron" style="color: #ff3333;">JOHNNY SILVERHAND</h5>
+                        <p class="card-text text-mono text-light flex-grow-1">
+                            Líder de la banda de cromorock SAMURAI, desertor militar y la peor pesadilla del sistema corporativo. Johnny encarnó la furia callejera contra las megacorps. En 2023, lideró un asalto paramilitar contra la Torre Arasaka, detonando una bomba nuclear de bolsillo que mató a miles. Fue asesinado por Adam Smasher, pero su conciencia fue digitalizada por el programa <em>Soulkiller</em>. Hoy, sobrevive como un engrama digital, un fantasma cibernético atrapado en un biochip, esperando su oportunidad para quemar la ciudad de nuevo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <img src="img/V_Cyberpunk.jpg" class="card-img-top border-bottom border-neon" alt="Mercenario V" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title font-orbitron text-warning">MERCENARIO "V"</h5>
+                        <p class="card-text text-mono text-light flex-grow-1">
+                            El comodín más impredecible de la década de 2070. De orígenes difusos, V escaló rápidamente desde el anonimato de las calles hasta la cima de la cadena alimenticia en el Afterlife. Conocido/a por realizar el suicida golpe al Konpeki Plaza, donde robó el prototipo Relic de Arasaka, terminando con el engrama de Silverhand incrustado en su cerebro. En una frenética carrera contra su propia muerte neurológica, V ha destrozado bases corporativas enteras y desmantelado cúpulas de pandillas, reescribiendo las reglas de las leyendas vivas de Night City.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <img src="img/AdamSmasher.jpg" class="card-img-top border-bottom border-neon" alt="Adam Smasher" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title font-orbitron text-secondary">ADAM SMASHER</h5>
+                        <p class="card-text text-mono text-light flex-grow-1">
+                            "La carne es débil". Esa es la única filosofía de Smasher. Antiguo mercenario de poca monta, fue destrozado en combate y reconstruido por Arasaka como una plataforma armamentística andante. Es 96% máquina cibernética de grado militar y cero por ciento empatía. Responsable de la muerte de Silverhand y de incontables leyendas de la calle, Smasher no siente dolor, miedo, ni piedad. Verlo descender del cielo en su chasis acorazado significa que Arasaka ha decidido que no mereces un funeral.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Sección de Bandas Expandida -->
+        <h3 class="font-orbitron text-neon mt-5 efecto-glitch">// SINDICATOS Y BANDAS</h3>
+        <div class="row g-4 mt-2">
+            
+            <div class="col-md-4">
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <img src="img/Moxes.jpg" class="card-img-top border-bottom border-neon" alt="Las Moxes" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title font-orbitron" style="color: #ff00ff;">LAS MOXES</h5>
+                        <p class="card-text text-mono text-light flex-grow-1">
+                            Nacidas de la sangre y el asfalto en 2076, Las Moxes se formaron tras el brutal asesinato de Elizabeth "Lizzie" Borden, la dueña de un club de striptease que defendía a capa y espada a sus trabajadores. Son un sindicato de autodefensa compuesto por muñecas (dolls), prostitutas, parias y minorías sexuales. Aunque son pequeñas y no están equipadas con cromo de combate pesado, su lealtad interna es de hierro. Controlan el Lizzie's Bar, su fortaleza en Watson, donde cazan a cualquier proxeneta o Tyger Claw que intente lastimar a los suyos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <img src="img/Maelstrom.jpg" class="card-img-top border-bottom border-neon" alt="Maelstrom" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title font-orbitron text-danger">MAELSTROM</h5>
+                        <p class="card-text text-mono text-light flex-grow-1">
+                            Terror tecno-psicótico en su estado más puro. Operando principalmente en el distrito industrial de Watson y el infame club Totentanz, los Maelstrom son fanáticos de la modificación cibernética extrema e ilegal. Sus ritos de iniciación suelen involucrar la extirpación del rostro para instalar repulsivos conjuntos ópticos de múltiples lentes. Consumidores adictos al "Black Lace" (una droga que adormece el dolor y altera el sistema nervioso), no sienten empatía ni racionalidad. Comerciar con ellos es jugar a la ruleta rusa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <img src="img/TygerClaws.jpg" class="card-img-top border-bottom border-neon" alt="Tyger Claws" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title font-orbitron text-info">TYGER CLAWS</h5>
+                        <p class="card-text text-mono text-light flex-grow-1">
+                            El sindicato más numeroso y arraigado de Japantown. Inspirados en las tradiciones yakuza, combinan códigos de honor feudales con negocios extremadamente sucios: trata de blancas, blanqueo de capitales, talleres de neurodanza ilegal y extorsión. Se los reconoce fácilmente por sus motos Yaiba Kusanagi, sus brillantes tatuajes bio-luminiscentes que les cubren la piel y su preferencia por el combate cuerpo a cuerpo con katanas térmicas. Son financiados y protegidos en la sombra por la megacorporación Arasaka.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Archivos Desclasificados (Flexbox TP) -->
+        <h3 class="font-orbitron text-neon mt-5 efecto-glitch">// ARCHIVOS DESCLASIFICADOS</h3>
+        <div class="flex-container-custom mb-5">
             <div class="flex-item-custom posicion-relativa">
                 <span class="badge-cyber">CONFIDENCIAL</span>
                 <h5 class="font-orbitron text-light">REPORTE 04-A</h5>
-                <p class="text-mono text-secondary">Aumento de actividad de pandillas no registradas en el sector norte de Watson.</p>
+                <p class="text-mono text-secondary">Aumento de actividad de pandillas no registradas en el sector norte de Watson. Posible enfrentamiento inminente por control territorial.</p>
             </div>
-
             <div class="flex-item-custom posicion-relativa">
                 <span class="badge-cyber">NUEVO</span>
                 <h5 class="font-orbitron text-light">MERCADO NEGRO</h5>
-                <p class="text-mono text-secondary">Ingreso detectado de implantes de grado militar en clínicas clandestinas de Pacifica.</p>
+                <p class="text-mono text-secondary">Ingreso masivo detectado de implantes de asalto militar grado-Militech en clínicas clandestinas de Pacifica operadas por los Voodoo Boys.</p>
             </div>
-
             <div class="flex-item-custom">
                 <h5 class="font-orbitron text-light">ECONOMÍA LOCAL</h5>
-                <p class="text-mono text-secondary">Caída del 14% en las acciones de corporaciones armamentísticas locales tras los últimos disturbios.</p>
+                <p class="text-mono text-secondary">Caída repentina del 14% en las acciones de corporaciones armamentísticas locales en la Bolsa de Eurodólares tras los últimos bloqueos corporativos.</p>
             </div>
-
         </div>
     </main>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

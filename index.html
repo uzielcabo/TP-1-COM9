@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Night City Guide - Inicio</title>
-    <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <!-- CSS Propio -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body class="bg-dark text-light cyberpunk-body">
@@ -16,7 +13,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon">
         <div class="container">
-            <a class="navbar-brand font-orbitron text-neon fw-bold" href="index.html">// NIGHT_CITY</a>
+            <a class="navbar-brand font-orbitron text-neon fw-bold efecto-glitch" href="index.html">// NIGHT_CITY</a>
             <button class="navbar-toggler border-neon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,43 +28,66 @@
         </div>
     </nav>
 
-    <main class="container py-5">
+    <!-- Alerta del Sistema -->
+    <div class="container mt-4">
+        <div class="alert bg-black border border-danger text-danger font-orbitron alert-dismissible fade show shadow-neon" role="alert">
+            <strong class="efecto-glitch">// ALERTA DE SEGURIDAD NCPD:</strong> Toque de queda activo en el distrito de Santo Domingo tras disturbios corporativos.
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <main class="container py-4">
         <div class="p-5 mb-5 bg-cyber-dark border border-neon rounded-3 shadow-neon text-center">
-            <h1 class="display-4 fw-bold font-orbitron text-neon">BIENVENIDO A NIGHT CITY</h1>
+            <h1 class="display-4 fw-bold font-orbitron text-neon efecto-glitch">BIENVENIDO A NIGHT CITY</h1>
             <h3 class="font-orbitron text-warning mt-4">EL PEOR LUGAR PARA VIVIR EN AMÉRICA</h3>
+            
+            <!-- IMAGEN PRINCIPAL -->
+            <img src="img/NightCity.png" alt="Vista de Night City" class="img-fluid rounded-3 border border-neon shadow-neon my-4" style="max-height: 450px; object-fit: cover; width: 100%;">
+
             <p class="col-md-10 fs-5 mx-auto text-mono text-light mt-3">
-                Te damos la bienvenida a Night City, una megalópolis hipertecnológica ubicada en el Estado Libre del Norte de California que desafía los límites de la civilización moderna. Aquí, el autodenominado "sueño americano" no se construye con esfuerzo, sino que se compra a plazos con cromo, eurodólares, implantes ilegales y la sangre de quienes caen en el pavimento. Bajo un cielo permanentemente teñido de smog y luces de neón parpadeantes, la supervivencia diaria es un deporte de alto riesgo donde la única constante es que la vida humana tiene un precio cotizado en bolsa.
+                Te damos la bienvenida a Night City, una megalópolis hipertecnológica ubicada en el Estado Libre del Norte de California que desafía los límites de la civilización moderna. Aquí, el autodenominado "sueño americano" no se construye con esfuerzo, sino que se compra a plazos con cromo, eurodólares, implantes ilegales y la sangre de quienes caen en el pavimento.
             </p>
             <a href="ciudad.html" class="btn btn-outline-neon btn-lg mt-4 font-orbitron">Acceder al Sistema</a>
         </div>
 
         <h2 class="font-orbitron text-neon mb-4">// DISTRITOS DESTACADOS</h2>
-        <div class="row g-4">
+        
+        <!-- GRILLA CENTRADA CON JUSTIFY-CONTENT-CENTER -->
+        <div class="row g-4 justify-content-center">
+            
             <div class="col-md-4">
-                <div class="card bg-cyber-dark border-neon h-100 shadow-neon p-3">
-                    <h5 class="font-orbitron text-neon">WATSON</h5>
-                    <p class="text-mono text-light flex-grow-1">El distrito industrial y de comercio exterior convertido en un laberinto controlado por bandas.</p>
-                    <a href="lugares.html" class="btn btn-outline-neon font-orbitron mt-auto">Explorar Distrito</a>
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title font-orbitron text-neon">WATSON</h5>
+                        <p class="card-text text-mono flex-grow-1">El distrito industrial y de comercio exterior convertido en un laberinto controlado por bandas.</p>
+                        <a href="lugares.html" class="btn btn-outline-neon font-orbitron w-100 mt-auto">Explorar Distrito</a>
+                    </div>
                 </div>
             </div>
+            
             <div class="col-md-4">
-                <div class="card bg-cyber-dark border-neon h-100 shadow-neon p-3">
-                    <h5 class="font-orbitron text-neon">WESTBROOK</h5>
-                    <p class="text-mono text-light flex-grow-1">Lujo, corporaciones y entretenimiento sin freno en Japantown y North Oak.</p>
-                    <a href="lugares.html" class="btn btn-outline-neon font-orbitron mt-auto">Explorar Distrito</a>
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title font-orbitron text-neon">AFTERLIFE</h5>
+                        <p class="card-text text-mono flex-grow-1">Contratos de alto riesgo y leyendas muertas. Si no tienes un fixer, ni te acerques.</p>
+                        <a href="lugares.html" class="btn btn-outline-neon font-orbitron w-100 mt-auto">Explorar Distrito</a>
+                    </div>
                 </div>
             </div>
+
             <div class="col-md-4">
-                <div class="card bg-cyber-dark border-neon h-100 shadow-neon p-3">
-                    <h5 class="font-orbitron text-neon">CITY CENTER</h5>
-                    <p class="text-mono text-light flex-grow-1">El corazón corporativo de las megacorps, brillando con torres de cristal y neón puro.</p>
-                    <a href="lugares.html" class="btn btn-outline-neon font-orbitron mt-auto">Explorar Distrito</a>
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title font-orbitron text-neon">JAPANTOWN</h5>
+                        <p class="card-text text-mono flex-grow-1">El centro neurálgico del turismo, casinos de alto nivel y el entretenimiento nocturno más vibrante.</p>
+                        <a href="lugares.html" class="btn btn-outline-neon font-orbitron w-100 mt-auto">Explorar Distrito</a>
+                    </div>
                 </div>
             </div>
+
         </div>
     </main>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,3 @@
-/* ========================================= */
-/* Bootstrap - personalizaciones y variables */
-/* ========================================= */
 .font-orbitron {
     font-family: 'Orbitron', sans-serif;
 }
@@ -54,17 +51,12 @@ body.cyberpunk-body {
     box-shadow: 0 0 15px #00ffcc;
 }
 
-/* ========================================= */
-/* Posicionamiento */
-/* ========================================= */
-/* Hace que la barra de navegación quede pegada arriba al scrollear */
 .navbar {
     position: sticky !important;
     top: 0;
     z-index: 1000;
 }
 
-/* Contenedor relativo y etiqueta absoluta (Badge) */
 .posicion-relativa {
     position: relative;
 }
@@ -84,9 +76,8 @@ body.cyberpunk-body {
 }
 
 /* ========================================= */
-/* Flexbox */
+/* FLEXBOX */
 /* ========================================= */
-/* Contenedor flex manual exigido por el TP */
 .flex-container-custom {
     display: flex;
     flex-wrap: wrap;
@@ -101,3 +92,24 @@ body.cyberpunk-body {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
 }
+
+@keyframes parpadeo-neon {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 8px #00ffcc; }
+    20%, 24%, 55% { opacity: 0.4; text-shadow: none; }
+}
+
+.efecto-glitch {
+    animation: parpadeo-neon 4s infinite;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.6) !important;
+    border-color: #00ffcc !important;
+    z-index: 10;
+}
+
