@@ -3,89 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto y Red de Fixers - Night City</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Night City Guide - Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
-    <header>
-        <h1>Contacto y Red de Fixers</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="ciudad.html">La Ciudad</a></li>
-                <li><a href="lugares.html">Lugares de Interés</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-dark text-light cyberpunk-body">
+    <div class="scanline"></div>
 
-    <main>
-        <section>
-            <h2>¿Tenés un encargo o querés reportar un incidente?</h2>
-            <p>Completá el formulario para conectar de manera segura con la red descentralizada de los Fixers de Night City. Recordá que toda transmisión está cifrada contra el rastreo de NetWatch.</p>
-            
-            <form style="display: flex; flex-direction: column; gap: 20px; margin-top: 25px;">
-                <div>
-                    <label for="alias" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Tu Alias o Nombre:</label>
-                    <input type="text" id="alias" name="alias" placeholder="Ej: V_Mercenario" required>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon">
+        <div class="container">
+            <a class="navbar-brand font-orbitron text-neon fw-bold" href="index.html">// NIGHT_CITY</a>
+            <button class="navbar-toggler border-neon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ciudad.html">LA CIUDAD</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lugares.html">LUGARES DE INTERÉS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html">CONTACTO</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="col-md-8 mx-auto p-5 bg-cyber-dark border border-neon rounded-3 shadow-neon">
+            <h2 class="font-orbitron text-neon mb-4">CANAL DE COMUNICACIÓN ENCRIPTADO</h2>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label font-orbitron">ALIAS (USUARIO)</label>
+                    <input type="text" class="form-control bg-dark text-neon border-neon text-mono" placeholder="Ej: MercenarioV">
                 </div>
-
-                <div>
-                    <label for="email" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Correo / Sub-Red:</label>
-                    <input type="email" id="email" name="email" placeholder="usuario@subred-nc.net" required>
+                <div class="mb-3">
+                    <label class="form-label font-orbitron">FRECUENCIA (EMAIL)</label>
+                    <input type="email" class="form-control bg-dark text-neon border-neon text-mono" placeholder="v@edgerunners.net">
                 </div>
-
-                <div>
-                    <label for="distrito" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Distrito de Operación:</label>
-                    <select id="distrito" name="distrito">
-                        <option value="watson">Watson</option>
-                        <option value="westbrook">Westbrook (Japantown)</option>
-                        <option value="city_center">City Center (Corpo Plaza)</option>
-                        <option value="heywood">Heywood</option>
-                        <option value="santo_domingo">Santo Domingo</option>
-                        <option value="badlands">Badlands</option>
-                    </select>
+                <div class="mb-4">
+                    <label class="form-label font-orbitron">MENSAJE ENCRIPTADO</label>
+                    <textarea class="form-control bg-dark text-neon border-neon text-mono" rows="4" placeholder="Ingresa los datos del encargo..."></textarea>
                 </div>
-
-                <div>
-                    <label for="prioridad" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Nivel de Urgencia / Prioridad:</label>
-                    <select id="prioridad" name="prioridad">
-                        <option value="baja">Baja (Sin apuro táctico)</option>
-                        <option value="media">Media (Operativo estándar)</option>
-                        <option value="critica">Crítica - Código Rojo (Vida o muerte)</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="pago" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Método de Recompensa:</label>
-                    <select id="pago" name="pago">
-                        <option value="eddies">Transferencia en Eurodólares (Eddies)</option>
-                        <option value="cartuchos">Cartuchos de Datos Cifrados</option>
-                        <option value="ciberware">Intercambio de Componentes de Ciberware</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="mensaje" style="display: block; margin-bottom: 5px; color: var(--neon-cyan); font-weight: bold;">Mensaje o Detalles del Contrato:</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describa el objetivo o consulta..." required style="resize: vertical;"></textarea>
-                </div>
-
-                <button type="submit">Enviar a la Red</button>
+                <button type="submit" class="btn btn-outline-neon btn-lg w-100 font-orbitron">TRANSMITIR DATOS</button>
             </form>
-        </section>
-
-        <section>
-            <h2>Canales de Respaldo</h2>
-            <p>Si la red principal falla, podés ubicarnos por los canales tradicionales:</p>
-            <ul>
-                <li><strong>Bar Afterlife:</strong> Frecuencia fija 99.4 FM (preguntar por Rogue).</li>
-                <li><strong>Clínica Clandestina:</strong> Esquina de Kabuki.</li>
-            </ul>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Oficina de Turismo de Night City / NetWatch Archives.</p>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
