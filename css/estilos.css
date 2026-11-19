@@ -106,10 +106,32 @@ body.cyberpunk-body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.card:hover 
     transform: translateY(-8px);
     box-shadow: 0 0 25px rgba(0, 255, 204, 0.6) !important;
     border-color: #00ffcc !important;
     z-index: 10;
+/* Estilos cuando se activa el modo claro/alternativo con JS */
+body.oscuro {
+    background-color: #f0f2f5 !important;
+    color: #212529 !important;
 }
 
+body.oscuro .bg-cyber-dark {
+    background-color: #ffffff !important;
+    color: #212529 !important;
+    border-color: #00acc1 !important;
+}
+
+body.oscuro .text-light {
+    color: #212529 !important;
+}
+
+body.oscuro .text-secondary {
+    color: #6c757d !important;
+}
+
+body.oscuro .card {
+    background-color: #ffffff !important;
+    color: #212529 !important;
+}
