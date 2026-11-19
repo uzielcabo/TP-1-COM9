@@ -10,6 +10,7 @@
 </head>
 <body class="bg-dark text-light cyberpunk-body">
     <div class="scanline"></div>
+    <canvas id="matrix-bg" aria-hidden="true"></canvas>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon">
         <div class="container">
@@ -23,9 +24,11 @@
                     <li class="nav-item"><a class="nav-link" href="ciudad.html">LA CIUDAD</a></li>
                     <li class="nav-item"><a class="nav-link" href="lugares.html">LUGARES DE INTERÉS</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
-                    <!-- Botón de Modo Oscuro/Claro (JS) -->
                     <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
                         <button id="btn-modo" class="btn btn-outline-neon btn-sm font-orbitron">Modo Oscuro</button>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <span id="reloj-hud" class="hud-clock font-orbitron">SYS_TIME // --:--:--</span>
                     </li>
                 </ul>
             </div>
@@ -35,19 +38,52 @@
     <!-- Alerta del Sistema -->
     <div class="container mt-4">
         <div class="alert bg-black border border-danger text-danger font-orbitron alert-dismissible fade show shadow-neon" role="alert">
-            <strong class="efecto-glitch">// ALERTA DE SEGURIDAD NCPD:</strong> Toque de queda activo en el distrito de Santo Domingo tras disturbios corporativos.
+            <span class="alerta-dot"></span><strong class="efecto-glitch">// ALERTA DE SEGURIDAD NCPD:</strong> Toque de queda activo en el distrito de Santo Domingo tras disturbios corporativos.
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
 
     <main class="container py-4">
-        <div class="p-5 mb-5 bg-cyber-dark border border-neon rounded-3 shadow-neon text-center">
-            <h1 class="display-4 fw-bold font-orbitron text-neon efecto-glitch">BIENVENIDO A NIGHT CITY</h1>
-            <h3 class="font-orbitron text-warning mt-4">EL PEOR LUGAR PARA VIVIR EN AMÉRICA</h3>
-            
-            <img src="img/NightCity.png" alt="Vista de Night City" class="img-fluid rounded-3 border border-neon shadow-neon my-4" style="max-height: 450px; object-fit: cover; width: 100%;">
+        <div class="p-4 p-md-5 mb-5 bg-cyber-dark border border-neon rounded-3 shadow-neon text-center">
+            <div class="hud-meta-bar">
+                <span>// TERMINAL_ID: NC-2077-MAIN</span>
+                <span>ESTADO DE RED: CONECTADO [PROXY_OK]</span>
+            </div>
 
-            <p class="col-md-10 fs-5 mx-auto text-mono text-light mt-3">
+            <h1 class="display-4 fw-bold font-orbitron text-neon efecto-glitch">BIENVENIDO A NIGHT CITY</h1>
+            <h3 class="font-orbitron text-warning mt-3">EL PEOR LUGAR PARA VIVIR EN AMÉRICA</h3>
+
+            <!-- Banner con etiquetas HUD y pie técnico -->
+            <div class="hud-banner my-4 shadow-neon">
+                <span class="hud-tag hud-tag-top-left">// SEC: NIGHT_CITY_GRID // NORCAL</span>
+                <img src="img/NightCity.png" alt="Vista de Night City" class="img-fluid" style="max-height: 450px; object-fit: cover; width: 100%;">
+                <span class="hud-tag hud-tag-bottom-right">CAM_04 [LIVE]</span>
+            </div>
+            <div class="hud-caption">
+                SECTOR CENTRAL — VISTA NOCTURNA TRAS APAGÓN CORPORATIVO
+            </div>
+
+            <!-- Panel de telemetría rápida -->
+            <div class="hud-stats-grid">
+                <div class="hud-stat-box">
+                    <span class="hud-stat-label">// POBLACIÓN ESTIMADA</span>
+                    <span class="hud-stat-value">6.9M HABITANTES</span>
+                </div>
+                <div class="hud-stat-box">
+                    <span class="hud-stat-label">// ÍNDICE DE CRIMEN</span>
+                    <span class="hud-stat-value text-danger">CRÍTICO [NIVEL 5]</span>
+                </div>
+                <div class="hud-stat-box">
+                    <span class="hud-stat-label">// DISTRITOS ACTIVOS</span>
+                    <span class="hud-stat-value">06 SECTORES</span>
+                </div>
+                <div class="hud-stat-box">
+                    <span class="hud-stat-label">// MONEDA OFICIAL</span>
+                    <span class="hud-stat-value">EURODÓLAR [€$]</span>
+                </div>
+            </div>
+
+            <p class="col-md-10 fs-5 mx-auto text-mono text-light mt-4">
                 Te damos la bienvenida a Night City, una megalópolis hipertecnológica ubicada en el Estado Libre del Norte de California que desafía los límites de la civilización moderna. Aquí, el autodenominado "sueño americano" no se construye con esfuerzo, sino que se compra a plazos con cromo, eurodólares, implantes ilegales y la sangre de quienes caen en el pavimento.
             </p>
 
@@ -64,18 +100,24 @@
             </div>
         </div>
 
+        <!-- Separador de sección estilo terminal -->
+        <div class="seccion-divisor">
+            <span>// 01. DISTRITOS Y ZONAS ACTIVAS</span>
+        </div>
+
         <h2 class="font-orbitron text-neon mb-4">// DISTRITOS DESTACADOS</h2>
 
         <!-- Buscador en tiempo real (JS) -->
         <div class="mb-4">
-            <input type="text" id="buscador-distritos" class="form-control bg-black text-light border-neon text-mono" placeholder="// Buscar distrito o palabra clave (ej: Watson, Afterlife, Corpo)...">
+            <input type="text" id="buscador-distritos" class="form-control bg-black text-light border-neon text-mono" placeholder="// Buscar distrito o palabra clave (ej: Watson, Afterlife, Japantown)...">
         </div>
-        
+
         <div class="row g-4 justify-content-center">
-            
+
             <!-- TARJETA 1: WATSON -->
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <span class="hud-card-tag">SEC_01 // RIESGO ALTO</span>
                     <img src="img/watson.jpg" class="card-img-top border-bottom border-neon" alt="Watson" style="height: 250px; object-fit: cover;">
                     <div class="card-body d-flex flex-column p-4">
                         <h5 class="card-title font-orbitron text-neon">WATSON</h5>
@@ -86,10 +128,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- TARJETA 2: AFTERLIFE -->
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <span class="hud-card-tag">SEC_02 // ZONA MERCENARIA</span>
                     <img src="img/afterlife.jpg" class="card-img-top border-bottom border-neon" alt="Afterlife" style="height: 250px; object-fit: cover;">
                     <div class="card-body d-flex flex-column p-4">
                         <h5 class="card-title font-orbitron text-neon">AFTERLIFE</h5>
@@ -97,3 +140,36 @@
                             El santuario definitivo del bajo mundo, construido sobre las cámaras frigoríficas de una antigua morgue. Es el único lugar donde los mejores mercenarios, netrunners y fixers se reúnen para cerrar contratos corporativos multimillonarios de alto riesgo.
                         </p>
                         <a href="lugares.html" class="btn btn-outline-neon font-orbitron w-100 mt-auto">EXPLORAR DISTRITO</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA 3: JAPANTOWN -->
+            <div class="col-md-4">
+                <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <span class="hud-card-tag">SEC_03 // WESTBROOK</span>
+                    <img src="img/Japantown.jpg" class="card-img-top border-bottom border-neon" alt="Japantown" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title font-orbitron text-neon">JAPANTOWN</h5>
+                        <p class="card-text text-mono flex-grow-1">
+                            El corazón de la cultura oriental en Night City, donde se mezclan tradiciones ancestrales y tecnología futurista en un entorno vibrante y lleno de vida.
+                        </p>
+                        <a href="lugares.html" class="btn btn-outline-neon font-orbitron w-100 mt-auto">EXPLORAR DISTRITO</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="cyber-footer py-4 mt-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <span>// NIGHT_CITY_NET // TERMINAL DE INFORMACIÓN URBANA v2.077</span>
+            <span class="text-neon">[SEÑAL CIFRADA — SIN RASTRO DE NETWATCH]</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

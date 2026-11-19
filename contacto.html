@@ -10,6 +10,7 @@
 </head>
 <body class="bg-dark text-light cyberpunk-body">
     <div class="scanline"></div>
+    <canvas id="matrix-bg" aria-hidden="true"></canvas>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon">
         <div class="container">
@@ -18,11 +19,17 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
                     <li class="nav-item"><a class="nav-link" href="ciudad.html">LA CIUDAD</a></li>
                     <li class="nav-item"><a class="nav-link" href="lugares.html">LUGARES DE INTERÉS</a></li>
                     <li class="nav-item"><a class="nav-link active" href="contacto.html">CONTACTO</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="btn-modo" class="btn btn-outline-neon btn-sm font-orbitron">Modo Oscuro</button>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <span id="reloj-hud" class="hud-clock font-orbitron">SYS_TIME // --:--:--</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -30,17 +37,22 @@
 
     <div class="container mt-4">
         <div class="alert bg-black border border-neon text-neon font-orbitron alert-dismissible fade show shadow-neon" role="alert">
-            <strong class="efecto-glitch">// PROTOCOLO DE ENCRIPTACIÓN ACTIVO:</strong> Las transmisiones son rastreadas por NetWatch en los sectores corporativos. Utilice un proxy de red antes de enviar datos.
+            <span class="alerta-dot alerta-dot-cyan"></span><strong class="efecto-glitch">// PROTOCOLO DE ENCRIPTACIÓN ACTIVO:</strong> Las transmisiones son rastreadas por NetWatch en los sectores corporativos. Utilice un proxy de red antes de enviar datos.
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
 
     <main class="container py-4">
-        
-        <div class="col-lg-8 mx-auto p-5 bg-cyber-dark border border-neon rounded-3 shadow-neon mb-5">
+
+        <div class="col-lg-8 mx-auto p-4 p-md-5 bg-cyber-dark border border-neon rounded-3 shadow-neon mb-5">
+            <div class="hud-meta-bar">
+                <span>// CANAL: ENLACE_FIXER_256BIT</span>
+                <span>RASTREO: BLOQUEADO</span>
+            </div>
+
             <h2 class="font-orbitron text-neon mb-3 efecto-glitch">CANAL DE COMUNICACIÓN ENCRIPTADO</h2>
             <p class="text-mono text-secondary mb-4">Ingrese los datos de su encargo o solicitud de refugio. La información será encriptada de extremo a extremo a través de la red local de los Fixers.</p>
-            
+
             <form>
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -85,21 +97,27 @@
             </form>
         </div>
 
+        <div class="seccion-divisor">
+            <span>// 01. REPETIDORES Y CONTACTOS DE EMERGENCIA</span>
+        </div>
+
         <!-- Canales Alternativos (Grilla de Bootstrap) -->
         <h3 class="font-orbitron text-neon mb-4 text-center efecto-glitch">// NODOS ALTERNATIVOS DE CONTACTO</h3>
-        
+
         <div class="row g-4 justify-content-center mb-5">
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon p-4 text-center">
-                    <h5 class="font-orbitron text-neon mb-3">MATASANOS LOCAL</h5>
+                    <span class="hud-card-tag">NODO_01</span>
+                    <h5 class="font-orbitron text-neon mb-3 mt-2">MATASANOS LOCAL</h5>
                     <p class="text-mono text-secondary flex-grow-1">Clínica clandestina en los subniveles de Watson. Reparación de implantes y cambio de identidad sin preguntas.</p>
-                    <span class="badge bg-danger mt-3 font-orbitron">ESTADO: ABIENTO 24/7</span>
+                    <span class="badge bg-danger mt-3 font-orbitron">ESTADO: ABIERTO 24/7</span>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon p-4 text-center">
-                    <h5 class="font-orbitron text-neon mb-3">RED DE FIXERS</h5>
+                    <span class="hud-card-tag">NODO_02</span>
+                    <h5 class="font-orbitron text-neon mb-3 mt-2">RED DE FIXERS</h5>
                     <p class="text-mono text-secondary flex-grow-1">Canal directo con intermediarios de alta alcurnia en el Afterlife. Solo para contratos con pago verificado en eurodólares.</p>
                     <span class="badge bg-warning text-dark mt-3 font-orbitron">ESTADO: ALTA DEMANDA</span>
                 </div>
@@ -107,7 +125,8 @@
 
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon p-4 text-center">
-                    <h5 class="font-orbitron text-neon mb-3">FRECUENCIA NOMADA</h5>
+                    <span class="hud-card-tag">NODO_03</span>
+                    <h5 class="font-orbitron text-neon mb-3 mt-2">FRECUENCIA NÓMADA</h5>
                     <p class="text-mono text-secondary flex-grow-1">Canal de radio de los clanes en las Badlands. Solicitudes de transporte blindado y contrabando fuera de la ciudad.</p>
                     <span class="badge bg-success mt-3 font-orbitron">ESTADO: FUERA DE LA RED</span>
                 </div>
@@ -116,9 +135,14 @@
 
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="cyber-footer py-4 mt-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <span>// NIGHT_CITY_NET // PROTOCOLO DE TRANSMISIÓN SEGURA</span>
+            <span class="text-neon">[NODO ACTIVO — SIN REGISTROS LOCALES]</span>
+        </div>
+    </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

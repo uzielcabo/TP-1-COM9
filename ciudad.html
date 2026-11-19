@@ -10,6 +10,7 @@
 </head>
 <body class="bg-dark text-light cyberpunk-body">
     <div class="scanline"></div>
+    <canvas id="matrix-bg" aria-hidden="true"></canvas>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon">
         <div class="container">
@@ -18,11 +19,17 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
                     <li class="nav-item"><a class="nav-link active" href="ciudad.html">LA CIUDAD</a></li>
                     <li class="nav-item"><a class="nav-link" href="lugares.html">LUGARES DE INTERÉS</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="btn-modo" class="btn btn-outline-neon btn-sm font-orbitron">Modo Oscuro</button>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <span id="reloj-hud" class="hud-clock font-orbitron">SYS_TIME // --:--:--</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -30,7 +37,12 @@
 
     <main class="container py-5">
 
-        <div class="p-5 mb-5 bg-cyber-dark border border-neon rounded-3 shadow-neon">
+        <div class="p-4 p-md-5 mb-5 bg-cyber-dark border border-neon rounded-3 shadow-neon">
+            <div class="hud-meta-bar">
+                <span>// REGISTRO HISTÓRICO: 1994 — 2077</span>
+                <span>CLASIFICACIÓN: ARCHIVO PÚBLICO</span>
+            </div>
+
             <h2 class="font-orbitron text-neon mb-4">HISTORIA Y FUNDACIÓN</h2>
             <p class="text-mono fs-5">
                 Fundada en 1994, originalmente bajo el nombre de Coronado City, esta megalópolis fue la visión utópica del visionario arquitecto y empresario Richard Night. Su objetivo era construir un paraíso capitalista definitivo, libre de la pobreza, el crimen y las sofocantes regulaciones gubernamentales de los viejos Estados Unidos. Sin embargo, su sueño duró poco: Night fue asesinado en 1998 por el crimen organizado, marcando el inicio del descenso de la ciudad hacia el caos.
@@ -38,16 +50,21 @@
             <p class="text-mono fs-5">
                 Durante las décadas siguientes, las mafias controlaron las calles hasta que las Megacorporaciones, lideradas por gigantes como Arasaka y Militech, barrieron con los sindicatos durante las Guerras Corporativas, tomando el control absoluto de la infraestructura y las leyes. En el año 2023, la ciudad sufrió la detonación de una carga nuclear táctica en el corazón del Centro Corporativo, un evento que envenenó el cielo y reescribió la geografía local.
             </p>
-            <p class="text-mono fs-5 text-warning">
+            <p class="text-mono fs-5 text-warning mb-0">
                 Hoy, en el año 2077, Night City es una selva de asfalto y neón hiper-estratificada. Desde las resplandecientes torres blindadas y fortalezas voladoras del City Center, donde los ejecutivos deciden el destino del mundo, hasta los sub-niveles tóxicos de Pacifica y Santo Domingo, donde la carne humana es el recurso más barato y el cromo es la única religión válida. Sobrevivir aquí no es un derecho; es un privilegio que se compra a base de balas y eurodólares.
             </p>
         </div>
 
-        <h3 class="font-orbitron text-neon mt-5 efecto-glitch">// LEYENDAS DE NIGHT CITY</h3>
+        <div class="seccion-divisor">
+            <span>// 01. EXPEDIENTES DE INDIVIDUOS CLAVE</span>
+        </div>
+
+        <h3 class="font-orbitron text-neon efecto-glitch">// LEYENDAS DE NIGHT CITY</h3>
         <div class="row g-4 mt-2">
-            
+
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <span class="hud-card-tag">ESTADO: MUERTO</span>
                     <img src="img/JohnnySilverhand.jpg" class="card-img-top border-bottom border-neon" alt="Johnny Silverhand" style="height: 250px; object-fit: cover;">
                     <div class="card-body d-flex flex-column p-4">
                         <h5 class="card-title font-orbitron" style="color: #ff3333;">JOHNNY SILVERHAND</h5>
@@ -57,9 +74,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <span class="hud-card-tag">ESTADO: DESCONOCIDO</span>
                     <img src="img/V_Cyberpunk.jpg" class="card-img-top border-bottom border-neon" alt="Mercenario V" style="height: 250px; object-fit: cover;">
                     <div class="card-body d-flex flex-column p-4">
                         <h5 class="card-title font-orbitron text-warning">MERCENARIO "V"</h5>
@@ -69,9 +87,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <span class="hud-card-tag">ESTADO: ACTIVO</span>
                     <img src="img/AdamSmasher.jpg" class="card-img-top border-bottom border-neon" alt="Adam Smasher" style="height: 250px; object-fit: cover;">
                     <div class="card-body d-flex flex-column p-4">
                         <h5 class="card-title font-orbitron text-secondary">ADAM SMASHER</h5>
@@ -84,11 +103,16 @@
 
         </div>
 
-        <h3 class="font-orbitron text-neon mt-5 efecto-glitch">// SINDICATOS Y BANDAS</h3>
+        <div class="seccion-divisor">
+            <span>// 02. FACCIONES Y CONTROL TERRITORIAL</span>
+        </div>
+
+        <h3 class="font-orbitron text-neon efecto-glitch">// SINDICATOS Y BANDAS</h3>
         <div class="row g-4 mt-2">
-            
+
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <span class="hud-card-tag">PELIGRO: MEDIO</span>
                     <img src="img/Moxes.jpg" class="card-img-top border-bottom border-neon" alt="Las Moxes" style="height: 250px; object-fit: cover;">
                     <div class="card-body d-flex flex-column p-4">
                         <h5 class="card-title font-orbitron" style="color: #ff00ff;">LAS MOXES</h5>
@@ -98,9 +122,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <span class="hud-card-tag">PELIGRO: EXTREMO</span>
                     <img src="img/Maelstrom.jpg" class="card-img-top border-bottom border-neon" alt="Maelstrom" style="height: 250px; object-fit: cover;">
                     <div class="card-body d-flex flex-column p-4">
                         <h5 class="card-title font-orbitron text-danger">MAELSTROM</h5>
@@ -110,9 +135,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="card bg-cyber-dark border-neon h-100 shadow-neon">
+                    <span class="hud-card-tag">PELIGRO: ALTO</span>
                     <img src="img/TygerClaws.jpg" class="card-img-top border-bottom border-neon" alt="Tyger Claws" style="height: 250px; object-fit: cover;">
                     <div class="card-body d-flex flex-column p-4">
                         <h5 class="card-title font-orbitron text-info">TYGER CLAWS</h5>
@@ -125,28 +151,37 @@
 
         </div>
 
-        <h3 class="font-orbitron text-neon mt-5 efecto-glitch">// ARCHIVOS DESCLASIFICADOS</h3>
+        <div class="seccion-divisor">
+            <span>// 03. FILTRACIONES DE RED</span>
+        </div>
+
+        <h3 class="font-orbitron text-neon efecto-glitch">// ARCHIVOS DESCLASIFICADOS</h3>
         <div class="flex-container-custom mb-5">
             <div class="flex-item-custom posicion-relativa">
                 <span class="badge-cyber">CONFIDENCIAL</span>
                 <h5 class="font-orbitron text-light">REPORTE 04-A</h5>
-                <p class="text-mono text-secondary">Aumento de actividad de pandillas no registradas en el sector norte de Watson. Posible enfrentamiento inminente por control territorial.</p>
+                <p class="text-mono text-secondary mb-0">Aumento de actividad de pandillas no registradas en el sector norte de Watson. Posible enfrentamiento inminente por control territorial.</p>
             </div>
             <div class="flex-item-custom posicion-relativa">
                 <span class="badge-cyber">NUEVO</span>
                 <h5 class="font-orbitron text-light">MERCADO NEGRO</h5>
-                <p class="text-mono text-secondary">Ingreso masivo detectado de implantes de asalto militar grado-Militech en clínicas clandestinas de Pacifica operadas por los Voodoo Boys.</p>
+                <p class="text-mono text-secondary mb-0">Ingreso masivo detectado de implantes de asalto militar grado-Militech en clínicas clandestinas de Pacifica operadas por los Voodoo Boys.</p>
             </div>
             <div class="flex-item-custom">
                 <h5 class="font-orbitron text-light">ECONOMÍA LOCAL</h5>
-                <p class="text-mono text-secondary">Caída repentina del 14% en las acciones de corporaciones armamentísticas locales en la Bolsa de Eurodólares tras los últimos bloqueos corporativos.</p>
+                <p class="text-mono text-secondary mb-0">Caída repentina del 14% en las acciones de corporaciones armamentísticas locales en la Bolsa de Eurodólares tras los últimos bloqueos corporativos.</p>
             </div>
         </div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="cyber-footer py-4 mt-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <span>// NIGHT_CITY_NET // BASE DE DATOS HISTÓRICA Y CRIMINAL</span>
+            <span class="text-neon">[ACCESO AUTORIZADO — NIVEL FIXER]</span>
+        </div>
+    </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
