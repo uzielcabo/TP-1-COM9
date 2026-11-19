@@ -292,7 +292,7 @@ body.cyberpunk-body {
     color: #9aa0b4;
 }
 
-/* LLUVIA DE NÚMEROS TIPO MATRIX EN EL FONDO */
+/* LLUVIA DE NÚMEROS */
 #matrix-bg {
     position: fixed;
     top: 0;
@@ -379,4 +379,19 @@ body.oscuro .cyber-footer {
     background-color: #e9ecef;
     color: #495057;
     border-top-color: #00acc1;
+}
+
+.navbar {
+    z-index: 9990 !important;
+}
+
+#menu-busqueda-nav {
+    z-index: 9995 !important;
+    background-color: #080614 !important;
+    box-shadow: 0 0 22px rgba(255, 0, 127, 0.55), 0 0 12px rgba(0, 255, 204, 0.25) !important;
+}
+
+body.oscuro #menu-busqueda-nav {
+    background-color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
 }
