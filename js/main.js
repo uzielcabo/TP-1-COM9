@@ -1,18 +1,16 @@
 // ==========================================
-// ETAPA 4 - JavaScript Interactivo (Commit 2)
+// ETAPA 4 - JavaScript Interactivo
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // --- 1. MODO OSCURO / CLARO ---
     const btnModo = document.getElementById("btn-modo");
-    
+
     if (btnModo) {
         btnModo.addEventListener("click", () => {
-            // Alterna la clase 'oscuro' en el body
             document.body.classList.toggle("oscuro");
-            
-            // Cambia el texto del botón según el estado actual
+
             if (document.body.classList.contains("oscuro")) {
                 btnModo.innerText = "Modo Claro";
             } else {
@@ -26,16 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (formContacto) {
         formContacto.addEventListener("submit", (e) => {
-            // Prevenimos que el formulario se envíe por defecto
             e.preventDefault();
 
             const inputAlias = formContacto.querySelector("input[type='text']");
             const inputEmail = formContacto.querySelector("input[type='email']");
             const textareaMensaje = formContacto.querySelector("textarea");
 
-            // Verificamos si algún campo principal está vacío
             if (inputAlias && inputEmail && textareaMensaje) {
-                if (inputAlias.value.trim() === "" || inputEmail.value.trim() === "" || textareaMensaje.value.trim() === "") {
+                if (
+                    inputAlias.value.trim() === "" ||
+                    inputEmail.value.trim() === "" ||
+                    textareaMensaje.value.trim() === ""
+                ) {
                     alert("ERROR DE RED: Todos los campos obligatorios deben estar completos para transmitir.");
                     return;
                 }
@@ -47,12 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- 3. MOSTRAR / OCULTAR CONTENIDO ("VER MÁS") ---
-    // Creamos un botón dinámico o buscamos si existe uno para desplegar información
     const btnVerMas = document.getElementById("btn-ver-mas");
     const infoAdicional = document.getElementById("info-adicional");
 
     if (btnVerMas && infoAdicional) {
-        // Ocultamos el contenido extra por defecto al cargar
         infoAdicional.style.display = "none";
 
         btnVerMas.addEventListener("click", () => {
@@ -66,4 +64,36 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-})
+    // --- 4. FILTRO / BUSCADOR EN TIEMPO REAL ---
+    const inputBuscador = document.getElementById("buscador-distritos");
+    const tarjetas = document.querySelectorAll(".col-md-4");
+
+    if (inputBuscador && tarjetas.length > 0) {
+        inputBuscador.addEventListener("input", () => {
+            const termino = inputBuscador.value.toLowerCase().trim();
+
+            tarjetas.forEach((tarjeta) => {
+                const textoTarjeta = tarjeta.innerText.toLowerCase();
+                if (textoTarjeta.includes(termino)) {
+                    tarjeta.style.display = "";
+                } else {
+                    tarjeta.style.display = "none";
+                }
+            });
+        });
+    }
+
+    // --- 5. ACORDEÓN / MENÚ DESPLEGABLE PROPIO ---
+    const botonesAcordeon = document.querySelectorAll(".btn-acordeon");
+
+    botonesAcordeon.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const panel = btn.nextElementSibling;
+            if (panel) {
+                const estaVisible = panel.style.display === "block";
+                panel.style.display = estaVisible ? "none" : "block";
+            }
+        });
+    });
+
+});
